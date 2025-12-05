@@ -39,6 +39,9 @@ def download_channel_content(channel_url):
                 return False
 
         uploader = info_dict.get('uploader', 'Unknown_Channel')
+        "
+        output_template = os.path.join(uploader, '%(video)s')
+        "
         output_template = os.path.join(uploader, '%(title)s [%(id)s].%(ext)s')
         output_path = os.path.abspath(uploader)
 
@@ -93,6 +96,7 @@ def print_progress(d):
         sys.stdout.write("\n")
         sys.stdout.flush()
 
+
 if __name__ == "__main__":
     keyboard.add_hotkey('ctrl+m', request_exit)
 
@@ -108,8 +112,7 @@ if __name__ == "__main__":
     input()
 
     keyboard.unhook_all()
-    
-    
+
     """
     특정 영상만 선택 해서 주소 입력시 그 영상만 다운되는 기능 추가 하기
     """
