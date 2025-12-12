@@ -39,9 +39,6 @@ def download_channel_content(channel_url):
                 return False
 
         uploader = info_dict.get('uploader', 'Unknown_Channel')
-        "
-        output_template = os.path.join(uploader, '%(video)s')
-        "
         output_template = os.path.join(uploader, '%(title)s [%(id)s].%(ext)s')
         output_path = os.path.abspath(uploader)
 
